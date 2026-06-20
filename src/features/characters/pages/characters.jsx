@@ -5,7 +5,7 @@ import { useCharacters } from "../hooks/use-characters";
 import styles from "./characters.module.css";
 
 export function CharactersPage() {
-    const { characters, loading, error, page, setPage, setName, setStatus, status} = useCharacters();
+    const { characters, loading, error, page, setPage, name, setName, setStatus, status} = useCharacters();
 
     if (error) return <h1>{error}</h1>;
 

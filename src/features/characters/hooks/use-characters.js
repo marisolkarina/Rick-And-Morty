@@ -10,14 +10,22 @@ export function useCharacters() {
   const [status, setStatus] = useState("");
 
   useEffect(() => {
+
     getCharacters({
       page,
       name,
       status
     })
-      .then((data) => setCharacters(data.results))
-      .catch((error) => setError(error.message))
-      .finally(() => setLoading(false));
+      .then((data) => {
+        setCharacters(data.results ?? []);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setCharacters([]);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
 
   }, [page, name, status]);
 

@@ -1,12 +1,21 @@
 import styles from "./filter.module.css";
 
 export function Filter({
+  name,
+  setName,
   status,
   setStatus
 }) {
   return (
     <div className={styles.container}>
+      <input
+        type="text"
+        placeholder="Search character..."
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
 
+      <p>{name}</p>
 
       <select
         value={status}
