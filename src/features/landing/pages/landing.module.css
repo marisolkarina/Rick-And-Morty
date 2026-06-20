@@ -1,0 +1,25 @@
+.container {
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    background-color: white;
+}
+
+.container h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #202329;
+
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.container p {
+    font-size: 1.25rem;
+    color: #666;
+}
