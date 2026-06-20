@@ -6,19 +6,30 @@ export function useCharacters() {
   const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
+  const [name, setName] = useState("");
+  const [status, setStatus] = useState("");
 
   useEffect(() => {
-    getCharacters(page)
+    getCharacters({
+      page,
+      name,
+      status
+    })
       .then((data) => setCharacters(data.results))
       .catch((error) => setError(error.message))
       .finally(() => setLoading(false));
-  }, [page]);
+
+  }, [page, name, status]);
 
   return {
     error,
     loading,
     characters,
     page,
-    setPage
+    setPage,
+    name,
+    setName,
+    status,
+    setStatus
   };
 }

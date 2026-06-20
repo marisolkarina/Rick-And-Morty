@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    margin: 24px;
+}
+
+.container input,
+.container select {
+    padding: 10px 14px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    font-size: 1rem;
+}
